@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Bucket List</title>
+    <style>
+        :root {
+            --primary: #2c3e50;
+            --secondary: #3498db;
+            --accent: #e74c3c;
+            --light: #ecf0f1;
+            --dark: #34495e;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            background-color: var(--light);
+            color: var(--primary);
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 2rem;
+            padding: 2rem 0;
+            background: linear-gradient(135deg, var(--secondary), var(--primary));
+            color: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            font-size: 2.8rem;
+            margin-bottom: 0.5rem;
+        }
+
+        p {
+            font-size: 1.2rem;
+            font-weight: 400;
+        }
+
+        .bucket-list {
+            list-style: none;
+            margin: 2rem 0;
+            padding: 0;
+        }
+
+        .bucket-list li {
+            background: white;
+            padding: 1.5rem;
+            margin: 1rem 0;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .bucket-list li:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .bucket-list li::before {
+            content: '';
+            display: inline-block;
+            width: 25px;
+            height: 25px;
+            margin-right: 1rem;
+            background-size: contain;
+            background-repeat: no-repeat;
+        }
+
+        .completed::before {
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%232ecc71"><path d="M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2z"/></svg>');
+        }
+
+        .pending::before {
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23f1c40f"><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm0 18c-4.4 0-8-3.6-8-8s3.6-8 8-8 8 3.6 8 8-3.6 8-8 8z"/></svg>');
+        }
+
+        footer {
+            text-align: center;
+            padding: 1.5rem;
+            background: var(--primary);
+            color: white;
+            border-radius: 12px;
+            margin-top: 2rem;
+            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Media Queries for Responsiveness */
+        @media (max-width: 1024px) {
+            .container {
+                margin: 1.5rem;
+            }
+            h1 {
+                font-size: 2.5rem;
+            }
+            .bucket-list li {
+                padding: 1.3rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                margin: 1rem;
+            }
+            h1 {
+                font-size: 2.2rem;
+            }
+            .bucket-list li {
+                padding: 1.2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                margin: 0.5rem;
+            }
+            h1 {
+                font-size: 1.8rem;
+            }
+            p {
+                font-size: 1rem;
+            }
+            .bucket-list li {
+                padding: 1rem;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>My Bucket List</h1>
+            <p>Life is either a daring adventure or nothing at all</p>
+        </header>
+        
+        <ul class="bucket-list">
+            <li class="completed">Visit the Eiffel Tower in Paris</li>
+            <li class="pending">Learn to surf in Hawaii</li>
+            <li class="pending">See the Northern Lights</li>
+            <li class="completed">Run a marathon</li>
+            <li class="pending">Volunteer at an animal shelter</li>
+            <li class="pending">Learn to play the guitar</li>
+        </ul>
+
+        <footer>
+            <p>© 2024 Bucket List Adventures • Live Your Dreams</p>
+        </footer>
+    </div>
+</body>
+</html>
